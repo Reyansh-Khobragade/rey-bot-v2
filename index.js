@@ -31,6 +31,7 @@ fs.readdir("./commands/", (err, files) => {
 client.login(config.token);
 
   client.on ('message', async message => {
+        if (message.author.bot) return;
     if(message.content.toLowerCase() === 'cat'){
         message.channel.send('<a:catyes:773862641265147944>')
      return message.react("<a:catyes:773862641265147944>")
@@ -103,12 +104,10 @@ client.login(config.token);
 
 });
    client.on('message', message => { 
-    // This took me nearly 1 hour to code
+         if (message.author.bot) return;
     if (message.content.toLowerCase() == 'rps') {
-        // Player Gets
       const whatyouget = ["scissors :scissors:", "paper :newspaper2:", "rock :shell:"] 
   const playergets = whatyouget[Math.floor(Math.random() * whatyouget.length)]; 
-  // Bot Gets
       const whatbotget = ["scissors :scissors:", "paper :newspaper2:", "rock :shell:"] 
   const botgets = whatbotget[Math.floor(Math.random() * whatbotget.length)]; 
    
