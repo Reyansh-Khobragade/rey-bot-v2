@@ -1,0 +1,25 @@
+const config = require('../config')
+const { MessageEmbed } = require("discord.js");
+exports.run = async(client, message, args) => {
+    let embed = new MessageEmbed()
+    .setTitle('Help')
+    .addField('Prefix','The prefix of the bot is ' + `${config.prefix}`)
+    .addField(`${config.prefix}`+'help','shows this')
+    .addField(`${config.prefix}`+'about', 'about the bot')
+    .addField(`${config.prefix}`+'rm', 'This will make a embed of you text you wanted to repeat(repeat me)')
+    .addField(`${config.prefix}`+'qr', 'This command will make a qr code of your preferred text')
+    .addField(`${config.prefix}`+'nitro', 'This will help you use nitro emoji from the server if you dont have nitro')
+    .addField(`${config.prefix}`+'invite', ' This will slow you the invite link of the bot')
+    .addField('Rock Paper Scissors', 'command is `rps`', 'you can play rock paper scissors with the bot')
+    .addField(`${config.prefix}`+"avatar", 'get the avatar of the user you want to')
+    .addField(`${config.prefix}`+'sysinfo','Shows THe System Information of The Bot')
+    .addField(`${config.prefix}`+'wb', 'type the text you want to see on the white board')
+    .addField(`${config.prefix}`+'pollyn','This makes a poll for yes or no questions')
+    .addField('Normal Text commands', 'many reactions and text while saying cat, bye, rick, cool,lol, oof, XD, pinging reyansh, no, f, rip ,butt etc.')
+    .setColor("RANDOM")
+    .setImage('https://cdn.discordapp.com/attachments/774847277092962345/774847506777374772/standard.gif')
+    .setTimestamp()
+    .setFooter(`${message.author.tag}`, message.author.displayAvatarURL())
+     message.channel.send(embed)
+    }
+
